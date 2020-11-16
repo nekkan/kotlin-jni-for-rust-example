@@ -42,9 +42,6 @@ cd "${BUILD_CLASSPATH}" || exit
 
 BUILD_CLASSPATH=$PWD
 
-cd "./dev/nekkan/jnitest" || exit
-BUILD=$PWD
-
 # The package that all Kotlin files are located.
 PACKAGE="dev.nekkan.jnitest"
 
@@ -59,6 +56,8 @@ function generate_header() {
         javah -classpath "$BUILD_CLASSPATH" "$PACKAGE.$1"
     fi
 }
+
+cd "./dev/nekkan/jnitest" || exit
 
 for file_name in *; do
     if [[ $file_name == *.class ]]; then
