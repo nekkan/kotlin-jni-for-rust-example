@@ -2,6 +2,6 @@ package dev.nekkan.jnitest
 
 class HelloWorld {
 
-    external fun sayHello(name: String)
+    external fun sayHello(name: String): Boolean
 
 }

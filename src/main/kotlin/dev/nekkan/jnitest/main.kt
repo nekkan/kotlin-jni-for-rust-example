@@ -1,5 +1,5 @@
 package dev.nekkan.jnitest
 
 fun main() {
-    HelloWorld().sayHello("Rust")
+    println(HelloWorld().sayHello("Rust"))
 }
