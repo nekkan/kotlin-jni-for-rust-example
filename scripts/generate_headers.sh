@@ -16,8 +16,11 @@ fi
 # ├──────── main/
 # ├──────────── kotlin/
 # ├──────────── resources/
+# ├──────────────── headers/
 # ├──────────── rust/
+
 cd ..
+ROOT=$PWD
 
 # Build both Gradle and Cargo projects.
 ./gradlew build
@@ -39,9 +42,9 @@ function generate_header() {
     # Run javah if Java version is lower than 9, otherwise use javah.
     if ! command -v javah &>/dev/null; then
         echo "Javah command not found, using \`javac -d\`..."
-        javac -classpath "$BUILD_CLASSPATH" -h "$PACKAGE.$1"
+        javac -d "$ROOT/src/main/resources/headers" -classpath "$BUILD_CLASSPATH" -h "$PACKAGE.$1"
     else
-        javah -classpath "$BUILD_CLASSPATH" "$PACKAGE.$1"
+        javah -d "$ROOT/src/main/resources/headers" -classpath "$BUILD_CLASSPATH" "$PACKAGE.$1"
     fi
 }
 
