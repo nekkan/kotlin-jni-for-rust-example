@@ -6,12 +6,6 @@ if ! command -v javac &>/dev/null; then
     exit 1
 fi
 
-# You will need to have Cargo installed on your machine.
-if ! command -v cargo &>/dev/null; then
-    echo "Command \`cargo\` not found. Make sure you have Cargo installed in your machine."
-    exit 1
-fi
-
 # Change the current working directory to the previous one, since the directory structure
 # we expect should be something like this:
 # root
@@ -25,19 +19,13 @@ fi
 # ├──────────── rust/
 cd ..
 
-# Set-up a variable that points to the expected build classes directory.
-
-# Set-up a variable that points to the expected Rust project directory.
-RUST_PROJECT_DIRECTORY="./src/main/rust"
-
 # Build both Gradle and Cargo projects.
 ./gradlew build
 
-# Change the working directory temporarily and build the Rust project.
-(cd "${RUST_PROJECT_DIRECTORY}" && cargo build)
+# Set-up a variable that points to the expected build classes directory.
+BUILD_CLASSPATH="./build/classes/kotlin/main"
 
 # Go to the build working directory and compile all headers.
-BUILD_CLASSPATH="./build/classes/kotlin/main"
 cd "${BUILD_CLASSPATH}" || exit
 
 BUILD_CLASSPATH=$PWD
