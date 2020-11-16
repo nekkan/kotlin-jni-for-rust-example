@@ -1,4 +1,9 @@
 .idea/
 .gradle/
 build/
-!src/**/build
+debug/
+target/
+Cargo.lock
+!src/**/debug/
+!src/**/target/
+!src/**/build/
