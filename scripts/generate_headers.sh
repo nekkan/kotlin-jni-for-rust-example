@@ -27,8 +27,6 @@ BUILD_CLASSPATH="$PWD/build/classes/kotlin/main"
 # Go to the build working directory and compile all headers.
 cd "${BUILD_CLASSPATH}" || exit
 
-BUILD_CLASSPATH=$PWD
-
 # The package that all Kotlin files are located.
 PACKAGE="dev.nekkan.jnitest"
 
