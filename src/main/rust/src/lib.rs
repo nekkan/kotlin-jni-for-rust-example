@@ -29,7 +29,7 @@ pub extern "system" fn Java_dev_nekkan_jnitest_HelloWorld_sayHello(
         .into();
 
     // Now, we need to print the name.
-    println!("{}", name);
+    hello_world::say_hello(&*name);
 
     // Then we have to create a new valid Kotlin boolean to return.
     return JNI_TRUE;
