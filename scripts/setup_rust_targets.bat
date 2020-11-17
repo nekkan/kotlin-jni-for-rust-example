@@ -1,9 +1,9 @@
 @echo off
 
-REM  You need to have rustup installed in your machine.
+REM You need to have rustup installed in your machine.
 where rustup >NUL
 
-REM  Checks if an error occurred due to the last command.
+REM Checks if an error occurred due to the last command.
 if %ERRORLEVEL% neq 0 (
     echo "Command `rustup` not found. Make sure you have rustup installed in your machine."
     exit /b 1
@@ -14,7 +14,7 @@ cd /d src >NUL
 cd /d main >NUL
 cd /d rust
 
-REM  Checks if the past exists.
+REM Checks if the past exists.
 if %ERRORLEVEL% neq 0 exit /b 1
 
 rustup target add armv7-linux-androideabi   # for arm
