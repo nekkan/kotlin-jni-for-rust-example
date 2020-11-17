@@ -1,9 +1,3 @@
-# You will need to have Cargo installed on your machine.
-if ! command -v cargo &>/dev/null; then
-    echo "Command \`cargo\` not found. Make sure you have Cargo installed in your machine."
-    exit 1
-fi
-
 cd ..
 ROOT=$PWD
 
@@ -15,7 +9,6 @@ RUST="./src/main/rust"
 
 # Build Rust project.
 cd "$RUST" || exit
-cargo build
 
 cd ./target/debug || exit
 
