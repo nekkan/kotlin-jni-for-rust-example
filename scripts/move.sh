@@ -17,3 +17,9 @@ for file in *; do
         mv "$file" "$RESOURCES"
     fi
 done
+
+if [ -z "$LD_LIBRARY_PATH" ] && [[ $LD_LIBRARY_PATH != *"$RESOURCES"* ]]; then
+    export LD_LIBRARY_PATH="$RESOURCES"
+else
+    export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$RESOURCES"
+fi
