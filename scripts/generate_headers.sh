@@ -23,7 +23,7 @@ cd ..
 ROOT=$PWD
 
 # Set-up a variable that points to the expected build classes directory.
-BUILD_CLASSPATH="./build/classes/kotlin/main"
+BUILD_CLASSPATH="$PWD/build/classes/kotlin/main"
 
 # Go to the build working directory and compile all headers.
 cd "${BUILD_CLASSPATH}" || exit
