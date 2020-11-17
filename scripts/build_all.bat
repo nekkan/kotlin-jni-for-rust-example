@@ -17,7 +17,20 @@ if %ERRORLEVEL% neq 0 (
 )
 
 REM Set a variable that points to the Gradle project root directory.
+cd /d ..
 SET root=%cd%
 
 REM Set a variable that points to the resources folder.
-SET resources="%cd%/src/main/resources"
+SET resources="%cd%\src\main\resources"
+
+REM Variable that points to the Rust project folder.
+SET rust="%cd%\src\main\rust"
+
+REM Build Gradle project.
+.\gradlew.bat build
+
+REM Build Rust project.
+cd /d rust
+
+if %ERRORLEVEL% neq 0 exit /b 1
+cargo build

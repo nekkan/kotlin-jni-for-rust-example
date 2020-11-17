@@ -18,7 +18,6 @@ fi
 # ├──────────── resources/
 # ├──────────────── headers/
 # ├──────────── rust/
-
 cd ..
 ROOT=$PWD
 
