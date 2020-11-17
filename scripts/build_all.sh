@@ -11,8 +11,12 @@ if ! command -v cargo &>/dev/null; then
 fi
 
 cd ..
+ROOT=$PWD
 
-# Variable that points to the Rust path.
+# Variable that points to the resources folder.
+RESOURCES="$ROOT/src/main/resources"
+
+# Variable that points to the Rust project folder.
 RUST="./src/main/rust"
 
 # Build Gradle project.
