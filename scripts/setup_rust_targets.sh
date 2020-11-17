@@ -2,7 +2,7 @@
 
 # You will need to have rustup installed on your machine.
 if ! command -v rustup &>/dev/null; then
-    echo "Command \`rustup\` not found. Make sure you rustup installed in your machine."
+    echo "Command \`rustup\` not found. Make sure you have rustup installed in your machine."
     exit 1
 fi
 

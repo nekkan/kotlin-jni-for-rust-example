@@ -2,7 +2,7 @@
 
 # You will need to have Java Development Kit installed on your machine.
 if ! command -v javac &>/dev/null; then
-    echo "Command \`javac\` not found. Make sure you Java Development Kit installed in your machine."
+    echo "Command \`javac\` not found. Make sure you have Java Development Kit installed in your machine."
     exit 1
 fi
 
