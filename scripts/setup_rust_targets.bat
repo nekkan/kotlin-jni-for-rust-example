@@ -14,7 +14,7 @@ cd /d src >NUL
 cd /d main >NUL
 cd /d rust
 
-REM Checks if the past exists.
+REM Checks if the folder exists.
 if %ERRORLEVEL% neq 0 exit /b 1
 
 rustup target add armv7-linux-androideabi   # for arm
