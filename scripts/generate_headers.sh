@@ -30,15 +30,18 @@ cd "${BUILD_CLASSPATH}" || exit
 # The package that all Kotlin files are located.
 PACKAGE="dev.nekkan.jnitest"
 
+# The folder that headers will be located on.
+HEADERS="$ROOT/src/main/resources/headers"
+
 function generate_header() {
     echo "Generating a header file for $1"
 
     # Run javah if Java version is lower than 9, otherwise use javah.
     if ! command -v javah &>/dev/null; then
         echo "Javah command not found, using \`javac -d\`..."
-        javac -d "$ROOT/src/main/resources/headers" -classpath "$BUILD_CLASSPATH" -h "$PACKAGE.$1"
+        javac -d "$HEADERS" -classpath "$BUILD_CLASSPATH" -h "$PACKAGE.$1"
     else
-        javah -d "$ROOT/src/main/resources/headers" -classpath "$BUILD_CLASSPATH" "$PACKAGE.$1"
+        javah -d "$HEADERS" -classpath "$BUILD_CLASSPATH" "$PACKAGE.$1"
     fi
 }
 
