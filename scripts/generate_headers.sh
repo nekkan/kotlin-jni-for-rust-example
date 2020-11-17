@@ -22,9 +22,6 @@ fi
 cd ..
 ROOT=$PWD
 
-# Build both Gradle and Cargo projects.
-./gradlew build
-
 # Set-up a variable that points to the expected build classes directory.
 BUILD_CLASSPATH="./build/classes/kotlin/main"
 
