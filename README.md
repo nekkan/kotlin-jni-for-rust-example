@@ -25,3 +25,15 @@ When you run the `run_all` script, it runs all other necessary scripts in the sa
   native function located at the Kotlin source code.
 
 * `move` Move the generated `.dll`, `.so` or `.dylib` file to the resources folder.
+
+* `add_to_path` Add the JNI files to the path.
+
+# Common issues
+
+* `java.lang.UnsatisfiedLinkError no <> in java.library.path`:
+  - Go to the scripts folder and run `add_to_path.sh` or pass the parameter
+    `Djava.library.path=path/that/the/jni/file/is/located/on`.
+
+* How can I execute all scripts on Windows?
+  - You must download WSL. Then you should run `build_all.bat` with Command Prompt or PowerShell, then you can
+    run `run_all.sh` using WSL.
