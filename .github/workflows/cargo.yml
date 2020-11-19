@@ -1,5 +1,5 @@
 # This workflow will build a Rust project with Cargo.
-name: Scripts CI
+name: Rust CI with Cargo
 
 on:
   push:
