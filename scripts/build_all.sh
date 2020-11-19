@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # You will need to have Java Development Kit installed on your machine.
 if ! command -v java &>/dev/null; then
     echo "Command \`java\` not found. Make sure you have Java Development Kit installed in your machine."
