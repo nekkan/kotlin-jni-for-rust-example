@@ -31,9 +31,12 @@ When you run the `run_all` script, it runs all other necessary scripts in the sa
 # Common issues
 
 * `java.lang.UnsatisfiedLinkError no <> in java.library.path`:
-  - Go to the scripts folder and run `add_to_path.sh` or pass the parameter
+  - Go to the scripts folder and run `. ./add_to_path.sh` or pass the parameter
     `Djava.library.path=path/that/the/jni/file/is/located/on`.
 
 * How can I execute all scripts on Windows?
   - You must download WSL. Then you should run `build_all.bat` with Command Prompt or PowerShell, then you can
     run `run_all.sh` using WSL.
+
+* My `add_to_path.sh` script is not adding to path after running it.
+  - You must run it using `. ./add_path.sh` instead of just `./add_path.sh`, since it is not run by `run_all.sh`.

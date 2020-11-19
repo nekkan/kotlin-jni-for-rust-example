@@ -17,3 +17,5 @@ if [ -z "$LD_LIBRARY_PATH" ]; then
 elif [[ $LD_LIBRARY_PATH != *"$RESOURCES"* ]]; then
     export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$RESOURCES"
 fi
+
+echo "$LD_LIBRARY_PATH"

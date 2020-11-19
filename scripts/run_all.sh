@@ -14,6 +14,4 @@ fi
 
 ./setup_rust_targets.sh
 ./build_all.sh
-./generate_headers.sh
 ./move.sh
-./add_to_path.sh
