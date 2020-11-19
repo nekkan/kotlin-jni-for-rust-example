@@ -12,8 +12,8 @@ RUST="$ROOT/src/main/rust"
 cd "$RUST" || exit
 cd ./target/debug || exit
 
-for file in *; do
-    if [[ $file == *.so ]] || [[ $file == *.dll ]] || [[ $file == *.dylib ]]; then
-        mv "$file" "$RESOURCES"
-    fi
-done
+if [ -z "$LD_LIBRARY_PATH" ]; then
+    export LD_LIBRARY_PATH="$RESOURCES"
+elif [[ $LD_LIBRARY_PATH != *"$RESOURCES"* ]]; then
+    export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$RESOURCES"
+fi
