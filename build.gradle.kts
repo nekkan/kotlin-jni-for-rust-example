@@ -12,7 +12,7 @@ dependencies {
 
 val jar by tasks.getting(Jar::class) {
     manifest {
-        attributes["Main-Class"] = "dev.nekkan.jnitest.MainKt"
+        attributes["Main-Class"] = "$group.jnitest.MainKt"
     }
 }
 
