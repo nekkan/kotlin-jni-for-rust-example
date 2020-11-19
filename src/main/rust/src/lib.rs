@@ -12,6 +12,8 @@ use jni::objects::{JObject, JString};
 // lifetime checker won't let us.
 use jni::sys::{jboolean, JNI_TRUE};
 
+use crate::hello_world::say_hello;
+
 mod hello_world;
 
 // This keeps Rust from "mangling" the name and making it unique for this
@@ -22,15 +24,5 @@ pub extern "system" fn Java_dev_nekkan_jnitest_HelloWorld_sayHello(
     object: JObject,
     name: JString,
 ) -> jboolean {
-
-    // First, we have to get the string out of Kotlin environment.
-    let name: String = environment.get_string(name)
-        .expect("Failed to get the name")
-        .into();
-
-    // Now, we need to print the name.
-    println!("{}", name);
-
-    // Then we have to create a new valid Kotlin boolean to return.
-    return JNI_TRUE;
+    say_hello(environment, object, name)
 }
