@@ -28,6 +28,8 @@ When you run the `run_all` script, it runs all other necessary scripts in the sa
 
 * `add_to_path` Add the JNI files to the path.
 
+*javap command is also useful for getting method signatures: https://stackoverflow.com/a/20318210/12207196*
+
 # Common issues
 
 * `java.lang.UnsatisfiedLinkError no <> in java.library.path`:
